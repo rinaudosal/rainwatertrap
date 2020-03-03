@@ -5,6 +5,7 @@ This is a "trap rain water calculator", pass the inputs and it return the correc
 To make the rain water trap i choose the following decision/assumpion:
   - if pass none params 0 is returned (no errors)
   - if pass 1 element 0 is returned
+  - max block height is 5
 
 ## development
 Rain water trap is developed in Java 11 and Junit framework to test business class.

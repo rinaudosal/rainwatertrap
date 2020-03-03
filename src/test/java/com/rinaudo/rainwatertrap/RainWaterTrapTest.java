@@ -1,6 +1,5 @@
 package com.rinaudo.rainwatertrap;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,16 +41,27 @@ public class RainWaterTrapTest {
         target.calculate(Arrays.asList(1, -2));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void calculateThrowAnExceptionOnHighto5Values() {
+        target.calculate(Arrays.asList(1, 6));
+    }
+
     @Test
     public void simpleOperationReturnsOneAreaValueCorrectly() {
         assertEquals(1,
-            target.calculate(Arrays.asList(0, 1, 0, 1)));
+            target.calculate(Arrays.asList(1, 0, 1)));
+        assertEquals(1,
+            target.calculate(Arrays.asList(1, 0, 2)));
+        assertEquals(1,
+            target.calculate(Arrays.asList(0, 2, 0, 1)));
     }
 
     @Test
     public void bulkOperationCheckReturnsZeroValueCorrectly() {
         assertEquals(0,
             target.calculate(Arrays.asList(0, 0, 1, 1, 1)));
+        assertEquals(0,
+            target.calculate(Arrays.asList(1, 1, 1, 0, 0)));
         assertEquals(0,
             target.calculate(Arrays.asList(1, 1, 1, 1, 1)));
         assertEquals(0,
