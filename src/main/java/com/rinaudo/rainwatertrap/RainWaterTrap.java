@@ -38,6 +38,7 @@ public class RainWaterTrap {
 
                 areaToGrab -= areaTrapped;
                 totalRainWaterTrapped += areaTrapped;
+                leftBorder = i;
             } else { // if point is less than leftBorder probably area are trapped
                 areaToGrab += (height-point) * (i-leftBorder);
             }
