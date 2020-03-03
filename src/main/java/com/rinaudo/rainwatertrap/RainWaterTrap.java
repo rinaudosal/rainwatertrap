@@ -18,6 +18,32 @@ public class RainWaterTrap {
             throw new IllegalArgumentException("Numbers must to be non-negative");
         }
 
-        return 0;
+
+        Integer leftBorder = 0;
+        Integer height = 0;
+        Integer areaToGrab = 0;
+
+        Integer totalRainWaterTrapped = 0;
+
+        for (int i = 0; i < points.size(); i++) {
+            Integer point = points.get(i);
+
+            if (point > leftBorder) { // when point is higher to leftBorder the area is invalid and point become the leftBorder
+                totalRainWaterTrapped += areaToGrab;
+                areaToGrab = 0;
+                height = point;
+                leftBorder = i;
+            } else if (point.equals(leftBorder)) { // if point is equals to leftBorder area are trapped and reset data
+                int areaTrapped = height * (i -1 - leftBorder);
+
+                areaToGrab -= areaTrapped;
+                totalRainWaterTrapped += areaTrapped;
+            } else { // if point is less than leftBorder probably area are trapped
+                areaToGrab += (height-point) * (i-leftBorder);
+            }
+
+        }
+
+        return totalRainWaterTrapped;
     }
 }
