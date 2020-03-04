@@ -8,19 +8,18 @@ To make the rain water trap i choose the following decision/assumpion:
   - max block height is 5
 
 ## development
-Rain water trap is developed in Java 11 and Junit framework to test business class.
+Rain water trap is developed in Java and Junit framework to test business class.
 
 The project have a Trap class to calculate the rain water having in input an array of non-negative int.
 
-Is present a main class to invoke the service class passing the sequence of borders, the class returns the value of water trapper.
-
-It is not imported any java utility libraries.
+Main class invoke the service class passing the sequence of borders, the class returns the value of water trapper and print to the console.
+It is not imported any java utility libraries. Only maven is used to import junit dependency and runs the unit tests.
 
 ## testing
-Pass to test the rainwatertrap:
-1 - clone the repository with command git clone aaaa
-2 - enter into root folder
-3 - run command javac pippo.java 12 3 4 5 6 6 6 6
+To test the rainwatertrap:
+ - clone the repository with command ```git clone https://github.com/rinaudosal/rainwatertrap.git ```
+ - ```cd rainwatertrap``` to pass into sub-folder of project
+ - run command with your preferred values of building blocks ```java -cp rainwatertrap-1.0.jar com.rinaudo.rainwatertrap.RainWaterExecutor 3 1 3 ```
 
 That's all!
 
